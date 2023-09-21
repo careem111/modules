@@ -34,7 +34,7 @@ data "aws_subnet_ids" "default" {
 resource "aws_launch_configuration" "example" {
     image_id    = "ami-0c55b159cbfafe1f0"
     instance_type = var.instance_type
-    key_name = "krm-ohio"
+    key_name = <keyname>
     security_groups = [aws_security_group.instance.id]
 
     user_data = data.template_file.user_data.rendered
